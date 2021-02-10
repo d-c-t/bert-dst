@@ -824,8 +824,8 @@ def main(_):
           prediction["guid"] = prediction["guid"].decode("utf-8").split("-")
           for slot in slot_list:
             start_pd = prediction['start_prediction_%s' % slot]
-            start_gt = prediction['start_pos_%s' % slot]
-            end_pd = prediction['start_prediction_%s' % slot]
+            start_gt = prediction['end_pos_%s' % slot]
+            end_pd = prediction['end_prediction_%s' % slot]
             end_gt = prediction['end_pos_%s' % slot]
             # TF uses int64, which is not JSON serializable.
             # Hence convert to int.
